@@ -1,6 +1,7 @@
 export default {
     "0A": {
-        content: "this is the starting point of the story bla bla"
+        content:
+            "this is the starting point of the story bla bla and then there is more story here and there and everywhere"
     },
 
     "1A": {

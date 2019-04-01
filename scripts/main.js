@@ -32,13 +32,39 @@ function renderStory() {
     storyBox.innerHTML = currentStory.content;
 }
 
-console.log(document.querySelector(".story-box p"));
+console.log();
 console.log(currentStory.content);
 console.log(renderStory());
 
 function renderChoices() {
-    let choiceBox = document.querySelector;
+    let choiceBox = document.querySelector(".choice-box");
+    choiceBox.innerHTML = "";
+
+    let newChoice = getChoicesForCurrentStory(currentStory);
+
+    newChoice.forEach(function(element, index) {
+        const newChoiceBox = document.createElement("div");
+        newChoiceBox.innerHTML = newChoice[index.content];
+        newChoiceBox.style.backgroundColor = "#3c6d63";
+        newChoiceBox.style.margin = "5px";
+        newChoiceBox.style.width = "300px";
+        newChoiceBox.style.height = "200px";
+        newChoiceBox.style.borderRadius = "20px";
+        newChoiceBox.style.padding = "20px";
+        newChoiceBox.style.fontSize = "35px";
+        choiceBox.appendChild(newChoiceBox);
+    });
 }
+console.log(renderChoices());
+
+/**
+  width: 30%;
+    height: 200px;
+    background-color: #3c6d63;
+    border: solid black;
+    margin: 5px;
+    border-radius: 20px;
+ */
 
 function renderEverything() {
     renderStory();

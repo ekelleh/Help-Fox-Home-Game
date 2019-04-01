@@ -107,18 +107,21 @@ header h1 {
 .choice-box {
     display: flex;
     flex-direction: row;
-    align-content: space-around;
+    align-content: space-between;
     justify-content: center;
     width: 80%;
     font-size: 25px;
-    margin: 10px;
+    margin: 15px;
 }
 
 .choice {
     width: 30%;
     height: 200px;
     background-color: #3c6d63;
-    border: solid black;
-    margin: 5px;
+    margin: 10px;
     border-radius: 20px;
+}
+
+.choice:hover {
+    cursor: pointer;
 }

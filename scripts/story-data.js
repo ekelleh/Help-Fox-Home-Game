@@ -1,3 +1,6 @@
+// this is all the data for the main story - story parts connected through the choices
+// story constructed in the Story class in story.js
+
 export default {
     "0A": {
         content:

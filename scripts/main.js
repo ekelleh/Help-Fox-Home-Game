@@ -1,30 +1,31 @@
-import { Story } from "./story.js";
+import { Story } from "./story.js"; // export class
 import { Choice } from "./choice.js";
-import storyData from "./story-data.js";
+import storyData from "./story-data.js"; //export default
 import choiceData from "./choice-data.js";
+
+//setting initial values
 
 const beginning = new Story(storyData["0A"].content, "0A");
 const choices = [];
 let currentStory = beginning;
 
+//initializing all choices in choice-data.js and adding them to choices array
+
 const createChoices = function() {
     choiceData.forEach(function(choice) {
-        console.log(choice);
         choices.push(new Choice(choice.content, choice.storyId, choice.targetStoryId));
     });
 };
 
-console.log(beginning);
 createChoices();
-console.log(choices);
+
+// create function that returns all choices belonging to a story
 
 function getChoicesForCurrentStory(story) {
     return choices.filter(element => {
         return story.id === element.story;
     });
 }
-
-console.log(getChoicesForCurrentStory(beginning));
 
 // render functions for placing current story and choices into the game HTML
 
@@ -55,12 +56,17 @@ function renderEverything() {
 
 renderEverything();
 
-// Adding an event listener for the choices that calls the render function
+// Adding an event listener for the choices("buttons") that calls the render choices function
+function choiceClickHandler(evt) {
+    console.log(evt.target.innerHTML);
+}
+
+function addEventListenerForChoice(choice) {
+    choice.addEventListener("click", choiceClickHandler);
+}
 
 function selectChoice() {
-    document.querySelectorAll(".choice").forEach(function(choice) {
-        choice.addEventListener("click", evt => {
-            console.log(evt.target.innerHTML);
-        });
-    });
+    document.querySelectorAll(".choice").forEach(addEventListenerForChoice);
 }
+
+//

@@ -6,7 +6,6 @@ import choiceData from "./choice-data.js";
 const beginning = new Story(storyData["0A"].content, "0A");
 const choices = [];
 let currentStory = beginning;
-renderEverything();
 
 const createChoices = function() {
     choiceData.forEach(function(choice) {
@@ -27,14 +26,12 @@ function getChoicesForCurrentStory(story) {
 
 console.log(getChoicesForCurrentStory(beginning));
 
+// render functions for placing current story and choices into the game HTML
+
 function renderStory() {
     let storyBox = document.querySelector(".story-box");
     storyBox.innerHTML = currentStory.content;
 }
-
-console.log();
-console.log(currentStory.content);
-console.log(renderStory());
 
 function renderChoices() {
     let choiceBox = document.querySelector(".choice-box");
@@ -42,33 +39,28 @@ function renderChoices() {
 
     let newChoice = getChoicesForCurrentStory(currentStory);
 
-    newChoice.forEach(function(element, index) {
+    newChoice.forEach(function(element) {
         const newChoiceBox = document.createElement("div");
         newChoiceBox.innerHTML = element.content;
-
-        newChoiceBox.style.backgroundColor = "#3c6d63";
-        newChoiceBox.style.margin = "5px";
-        newChoiceBox.style.width = "300px";
-        newChoiceBox.style.height = "200px";
-        newChoiceBox.style.borderRadius = "20px";
-        newChoiceBox.style.padding = "20px";
-        newChoiceBox.style.fontSize = "35px";
+        newChoiceBox.classList.add("choice");
         choiceBox.appendChild(newChoiceBox);
     });
 }
-console.log(renderChoices());
 
 function renderEverything() {
     renderStory();
     renderChoices();
+    selectChoice();
 }
 
-// tee funktio render joka asettaa nykyisen storyn ja nykyiset choicet HTMLään , ktso pizzat
-// render story ja render choices fuktiot jota kutsutaan
-// choicea klikkaamalla vaihtuu nykyinen story ja kutsuu render funtkiota
+renderEverything();
 
-/**
- Haluat, että `renderStory` funktio laittaa sen `currentStory`n contentin sinne sivulla olevaan 
- diviin, jossa se nykyisen storyn teksti näkyy
-Ja sit `renderChoices` tekee saman, mutta niille Choice napeille
- */
+// Adding an event listener for the choices that calls the render function
+
+function selectChoice() {
+    document.querySelectorAll(".choice").forEach(function(choice) {
+        choice.addEventListener("click", evt => {
+            console.log(evt.target.innerHTML);
+        });
+    });
+}

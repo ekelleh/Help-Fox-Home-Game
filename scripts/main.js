@@ -44,7 +44,8 @@ function renderChoices() {
 
     newChoice.forEach(function(element, index) {
         const newChoiceBox = document.createElement("div");
-        newChoiceBox.innerHTML = newChoice[index.content];
+        newChoiceBox.innerHTML = element.content;
+
         newChoiceBox.style.backgroundColor = "#3c6d63";
         newChoiceBox.style.margin = "5px";
         newChoiceBox.style.width = "300px";
@@ -56,15 +57,6 @@ function renderChoices() {
     });
 }
 console.log(renderChoices());
-
-/**
-  width: 30%;
-    height: 200px;
-    background-color: #3c6d63;
-    border: solid black;
-    margin: 5px;
-    border-radius: 20px;
- */
 
 function renderEverything() {
     renderStory();

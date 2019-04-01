@@ -44,6 +44,7 @@ function renderChoices() {
         const newChoiceBox = document.createElement("div");
         newChoiceBox.innerHTML = element.content;
         newChoiceBox.classList.add("choice");
+        newChoiceBox.setAttribute("data-target-story-id", element.targetStory);
         choiceBox.appendChild(newChoiceBox);
     });
 }
@@ -57,8 +58,17 @@ function renderEverything() {
 renderEverything();
 
 // Adding an event listener for the choices("buttons") that calls the render choices function
+//make click change current story i.e lead to next story part
+
+function changeCurrentStory(storyId) {
+    currentStory = new Story(storyData[storyId].content, storyId);
+    console.log(currentStory);
+}
+
 function choiceClickHandler(evt) {
-    console.log(evt.target.innerHTML);
+    const targetStoryId = evt.target.getAttribute("data-target-story-id");
+    changeCurrentStory(targetStoryId);
+    renderEverything();
 }
 
 function addEventListenerForChoice(choice) {
@@ -68,5 +78,3 @@ function addEventListenerForChoice(choice) {
 function selectChoice() {
     document.querySelectorAll(".choice").forEach(addEventListenerForChoice);
 }
-
-//

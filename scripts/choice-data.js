@@ -11,5 +11,15 @@ export default [
         content: " second choice",
         storyId: "0A",
         targetStoryId: "1B"
+    },
+    {
+        content: "x choice",
+        storyId: "1A",
+        targetStoryId: "2A"
+    },
+    {
+        content: " y choice",
+        storyId: "1B",
+        targetStoryId: "2B"
     }
 ];

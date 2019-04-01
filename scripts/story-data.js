@@ -8,12 +8,18 @@ export default {
     },
 
     "1A": {
-        content: "You have won!",
-        isGameWon: true
+        content: "will lead to victory"
     },
 
     "1B": {
-        content: "You have lost!",
+        content: "will lead to game over"
+    },
+    "2A": {
+        content: "You have won!",
+        isGameWon: true
+    },
+    "2B": {
+        content: "you have lost",
         isGameOver: true
     }
 };

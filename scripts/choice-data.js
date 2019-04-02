@@ -199,7 +199,7 @@ export default [
         targetStoryId: "5B"
     },
     {
-        content: "Go back",
+        content:"Go back",
         storyId: "8A",
         targetStoryId: "7A"
     }

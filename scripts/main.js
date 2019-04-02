@@ -60,8 +60,7 @@ renderEverything();
 // Adding an event listener for the choices("buttons") that calls the render choices function
 //make click change current story i.e lead to next story part
 
-var audio = new Audio("/sounds/aaj_0276_Harmonica_Riff_10.mp3");
-audio.play();
+var audio = new Audio("/sounds/194071__potentjello__buttons-and-knobs-10.wav");
 
 function changeCurrentStory(storyId) {
     currentStory = new Story(storyData[storyId].content, storyId);

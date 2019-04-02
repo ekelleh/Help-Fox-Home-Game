@@ -73,6 +73,8 @@ function choiceClickHandler(evt) {
     changeCurrentStory(targetStoryId);
     renderEverything();
     audio.play();
+    let emptyHeading = document.querySelector(".story-header");
+    emptyHeading.innerHTML = "";
 }
 
 function addEventListenerForChoice(choice) {

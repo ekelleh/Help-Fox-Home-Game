@@ -149,5 +149,58 @@ export default [
             "The other rabbits are still close by and you could catch one more to take with you home",
         storyId: "4B",
         targetStoryId: "5C"
+    },
+    {
+        content: "You decide to risk it and stay and help the other fox",
+        storyId: "5A",
+        targetStoryId: "6A"
+    },
+    {
+        content:
+            "You have  plenty of bad experiences from humans, this is not the time to get more of them – better get going",
+        storyId: "5A",
+        targetStoryId: "5B"
+    },
+    {
+        content: "You run across the road!",
+        storyId: "5B",
+        targetStoryId: "2A"
+    },
+    {
+        content:
+            "You try to explain that it's safer for the other fox to stay behind and find a resting place close by ",
+        storyId: "6A",
+        targetStoryId: "7B"
+    },
+    {
+        content: "Grudgingly you say yes and let the other fox follow..",
+        storyId: "6A",
+        targetStoryId: "7A"
+    },
+    {
+        content: "You take the road between the houses",
+        storyId: "7A",
+        targetStoryId: "8B"
+    },
+    {
+        content: "You take the road across the construction site ahead",
+        storyId: "7A",
+        targetStoryId: "8A"
+    },
+    {
+        content: "You instinctively bite back!",
+        storyId: "7B",
+        targetStoryId: "8B"
+    },
+    {
+        content:
+            "You don't wanna fight, just go home, so you retreat back to the yard with the dumpsters",
+        storyId: "7B",
+        targetStoryId: "5B"
+    },
+    {
+        content: "Go back",
+        storyId: "8A",
+        targetStoryId: "7A"
     }
 ];

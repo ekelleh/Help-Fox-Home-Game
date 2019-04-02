@@ -60,5 +60,42 @@ export default {
     "4B": {
         content:
             "Rabbits are quick, but so are you. You catch one easily enough and get a nice little! Too bad these city rabbits are so tiny. The other rabbits scatter, but you can still smell them close by."
+    },
+    "5A": {
+        content:
+            "You’re having the time of your life, rummaging around the garbage cans and finding all kinds of delicious treats. Then the other fox gets stuck in one of the garbage cans! At the same time you hear humans approach...this is really not optimal!"
+    },
+    "5B": {
+        content:
+            "You hear a dog bark somewhere close. Shit, it’s a really big dog and you really need to get away!"
+    },
+    "5C": {
+        content: "when chasing the rabbit you get stuck in a trap the humans have made! GAME OVER!",
+        isGameOver: true
+    },
+    "6A": {
+        content:
+            "Finally you manage to get the other fox free! And you are lucky – the humans seem to have turned a corner, so they didn’t come. Phew! The other wants to join you. They fox have hurt their paw and you are getting really tired now. The way to your cosy little home hole is hard for a fox with a hurt paw and it might not be the best idea.."
+    },
+    "6B": {
+        content:
+            "The dog traps you in a corner and you can see it’s teeth glimmering in the moonlight...GAME OVER!"
+    },
+
+    "7A": {
+        content:
+            "It’s actually quite nice to have company. You help your limping fox friend and start heading forward. However, you are in a new part o town and not really sure about the shortest way home..."
+    },
+    "7B": {
+        content:
+            "The other fox gets really upset and bites you! They showed you this place and were all nice and this is your way to say thank you!"
+    },
+    "8A": {
+        content: " Damn! It’s is a dead end and you can't get further!"
+    },
+    "8B": {
+        content:
+            "Finally you get home! Dawn is breaking and the birds are singing! You watch the last stars fade away together with your new friend and the you fall asleep in your nice little fox hole, content and happy.",
+        isGameWon: true
     }
 };

@@ -28,7 +28,7 @@ body .index {
 
 .story-header {
     margin: 10px;
-    color: white;
+    color: #e1dda1;
 }
 
 header h1 {
@@ -169,13 +169,10 @@ header h1 {
 .fox {
     width: 215px;
     height: 275px;
-    display: flex;
-    top: 50%;
-    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    margin-top: 200px;
-    margin-left: 170px;
+    margin-top: 240px;
+    margin-left: 190px;
 }
 .fox .head {
     width: 184px;
@@ -312,13 +309,15 @@ header h1 {
     top: 165px;
     right: 103px;
 }
-a.maker {
+.maker {
     font-size: 14px;
-    text-decoration: none;
-    color: #e1dda1;
     position: fixed;
     bottom: 10px;
     right: 10px;
+}
+.maker a {
+    color: #e1dda1;
+    text-decoration: none;
 }
 
 @keyframes piscar {

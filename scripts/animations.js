@@ -12,12 +12,13 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(800, 600);
+    var canvas = createCanvas(70, 70);
+    canvas.parent("sketch-holder");
 }
 
 function draw() {
     clear();
-    animation(sequenceAnimation, 100, 100);
+    animation(sequenceAnimation, 35, 35);
 }
 
 /**

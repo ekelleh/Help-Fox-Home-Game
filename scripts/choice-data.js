@@ -18,6 +18,12 @@ export default [
         content:
             "Nah, it’s not really worth the hassle..maybe you’ll just turn around to go straight home",
         storyId: "1A",
+        targetStoryId: "1B"
+    },
+    {
+        content:
+            "You’re fast, you can quickly continue and cross the street like you’ve done a hundred times",
+        storyId: "1A",
         targetStoryId: "2A"
     },
     {
@@ -199,7 +205,7 @@ export default [
         targetStoryId: "5B"
     },
     {
-        content:"Go back",
+        content: "Go back",
         storyId: "8A",
         targetStoryId: "7A"
     }

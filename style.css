@@ -115,7 +115,7 @@ header h1 {
 .story-box {
     background-color: rgb(19, 16, 60);
     color: white;
-    height: 400px;
+    min-height: 300px;
     width: 1200px;
     margin: 10px;
     border-radius: 20px;
@@ -140,7 +140,7 @@ header h1 {
 
 .choice {
     width: 30%;
-    height: 200px;
+    min-height: 200px;
     background-color: rgb(19, 16, 60);
     color: white;
     border: solid #e1dda1;

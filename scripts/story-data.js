@@ -14,7 +14,7 @@ export default {
 
     "1B": {
         content:
-            "You head into the big park, this is your favourite route home. You head homewards, but then you  hear a sound in the bushes. You.."
+            "You head into the big park, this is your favorite route home. You head homewards, but then you  hear a sound in the bushes. You.."
     },
     "2A": {
         content:

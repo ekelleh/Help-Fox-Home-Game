@@ -8,6 +8,9 @@ import choiceData from "./choice-data.js";
 const beginning = new Story(storyData["0A"].content, "0A");
 const choices = [];
 let currentStory = beginning;
+const clickSound = new Audio("/sounds/194071__potentjello__buttons-and-knobs-10.wav");
+const gameOverSound = new Audio("/sounds/337910__fschaeffer__82churchbells_Game over.wav");
+const gettingHomeSound = new Audio("/sounds/aaj_0276_Harmonica_Riff_10.mp3");
 
 //initializing all choices in choice-data.js and adding them to choices array
 
@@ -53,6 +56,8 @@ function renderEverything() {
     renderStory();
     renderChoices();
     selectChoice();
+    gameOverEffects();
+    winningSound();
 }
 
 renderEverything();
@@ -60,10 +65,11 @@ renderEverything();
 // Adding an event listener for the choices("buttons") that calls the render choices function
 //make click change current story i.e lead to next story part
 
-var audio = new Audio("/sounds/194071__potentjello__buttons-and-knobs-10.wav");
-
 function changeCurrentStory(storyId) {
-    currentStory = new Story(storyData[storyId].content, storyId);
+    const storyDataObject = storyData[storyId];
+    const isGameOver = storyDataObject.hasOwnProperty("isGameOver") ? storyDataObject.isGameOver : false;
+    const isGameWon = storyDataObject.hasOwnProperty("isGameWon") ? storyDataObject.isGameWon : false;
+    currentStory = new Story(storyDataObject.content, storyId, isGameOver, isGameWon);
     console.log(currentStory);
 }
 
@@ -71,7 +77,7 @@ function choiceClickHandler(evt) {
     const targetStoryId = evt.target.getAttribute("data-target-story-id");
     changeCurrentStory(targetStoryId);
     renderEverything();
-    audio.play();
+    clickSound.play();
     let emptyHeading = document.querySelector(".story-header");
     emptyHeading.innerHTML = "";
 }
@@ -84,10 +90,27 @@ function selectChoice() {
     document.querySelectorAll(".choice").forEach(addEventListenerForChoice);
 }
 
+//adding sound effects
+
+function gameOverEffects() {
+    if (currentStory.isGameOver === true) {
+        gameOverSound.play();
+
+        let gameOverText = document.querySelector(".story-header");
+        gameOverText.innerHTML = "GAME OVER!";
+        gameOverText.style.color = "red";
+        gameOverText.style.fontSize = "7rem";
+        storyHeader.appendChild(gameOverText);
+    }
+}
+
+function winningSound() {
+    if (currentStory.isGameWon === true) {
+        gettingHomeSound.play();
+    }
+}
+
 // make Game Won victory page
 // make Game over page
-// style
-// add content
-// add animations
-// sound
+// add aniimation page "loading"
 // add score counter?

@@ -2,15 +2,12 @@ import { Story } from "./story.js"; // export class
 import { Choice } from "./choice.js";
 import storyData from "./story-data.js"; //export default
 import choiceData from "./choice-data.js";
-import { setup, draw } from "./animations.js";
 
 //setting initial values
 
 const beginning = new Story(storyData["0A"].content, "0A");
 const choices = [];
 let currentStory = beginning;
-
-setup();
 
 //initializing all choices in choice-data.js and adding them to choices array
 
@@ -56,7 +53,6 @@ function renderEverything() {
     renderStory();
     renderChoices();
     selectChoice();
-    draw();
 }
 
 renderEverything();
@@ -64,7 +60,7 @@ renderEverything();
 // Adding an event listener for the choices("buttons") that calls the render choices function
 //make click change current story i.e lead to next story part
 
-var audio = new Audio("https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3");
+var audio = new Audio("/sounds/aaj_0276_Harmonica_Riff_10.mp3");
 audio.play();
 
 function changeCurrentStory(storyId) {

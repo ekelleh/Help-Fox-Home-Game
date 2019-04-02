@@ -3,12 +3,12 @@
 
 export default [
     {
-        content: "first choice",
+        content: "Follow the smell to see if there is some food to be found",
         storyId: "0A",
         targetStoryId: "1A"
     },
     {
-        content: " second choice",
+        content: "Don't follow the smell and continue homewards",
         storyId: "0A",
         targetStoryId: "1B"
     },

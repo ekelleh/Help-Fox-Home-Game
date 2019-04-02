@@ -4,7 +4,7 @@
 export default {
     "0A": {
         content:
-            "this is the starting point of the story bla bla and then there is more story here and there and everywhere"
+            "It is a quiet evening in the city and you want to go home. The only problem is that you are on the wrong side of town, far away from home. This is a big city, especially for a small (however cunning) fox like you. As the sun sets, you start padding east, where you can see the first stars. You want to get home to your cosy little fox hole where you know you have some food stored. You feel hunger grumbling at the bottom of your belly and you feel a faint smell of food coming from somewhere, you:"
     },
 
     "1A": {

@@ -89,3 +89,4 @@ function selectChoice() {
 // add content
 // add animations
 // sound
+// add score counter?

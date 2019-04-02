@@ -15,6 +15,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
+    color: white;
+}
+
+body .index {
+    background: white;
 }
 
 .hero {
@@ -39,7 +44,7 @@ header h1 {
 }
 
 .ribbon {
-    background-color: #16a085; /* bg color for center of ribbon */
+    background-color: #13103c; /* bg color for center of ribbon */
     border: 3px solid #eee; /*border color for center of ribbon */
     padding: 0 20px;
     height: 56px;
@@ -64,6 +69,8 @@ header h1 {
     display: block;
     z-index: -1;
 }
+
+/* #16a085; bg color for center of ribbon */
 
 .ribbon:before {
     border-color: #138a72 #138a72 #138a72 transparent; /*bg color for left side of ribbon */
@@ -93,10 +100,11 @@ header h1 {
 }
 
 .start-game {
-    background-color: #3c6d63;
+    background-color: rgb(19, 16, 60);
     border-radius: 10px;
     padding: 50px;
     margin: 15px;
+    border: solid white;
 }
 
 .start-game a {

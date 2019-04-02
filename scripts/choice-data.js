@@ -3,22 +3,24 @@
 
 export default [
     {
-        content: "Follow the smell to see if there is some food to be found",
-        storyId: "0A",
-        targetStoryId: "1A"
-    },
-    {
-        content: "Don't follow the smell and continue homewards",
+        content:
+            "Maybe it’s safer to just start heading straight home, you can find something to nibble on on the way..",
         storyId: "0A",
         targetStoryId: "1B"
     },
     {
-        content: "x choice",
+        content:
+            "Turn around and follow your nose in the direction of the smell, there might be food close by...",
+        storyId: "0A",
+        targetStoryId: "1A"
+    },
+    {
+        content: "",
         storyId: "1A",
         targetStoryId: "2A"
     },
     {
-        content: " y choice",
+        content: "",
         storyId: "1B",
         targetStoryId: "2B"
     }

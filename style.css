@@ -70,11 +70,11 @@ header h1 {
 }
 
 .ribbon:before {
-    border-color: #513b53 #513b53 #513b53 transparent; /*bg color for left side of ribbon */
+    border-color: #481026 #481026 #481026 transparent; /*bg color for left side of ribbon #513b53*/
 }
 
 .ribbon:after {
-    border-color: #513b53 transparent #513b53 #513b53; /* bg color for right side of ribbon */
+    border-color: #481026 transparent #481026 #481026; /* bg color for right side of ribbon */
     right: -45px;
     left: auto;
 }
@@ -102,7 +102,7 @@ header h1 {
     background-color: rgb(19, 16, 60);
     border-radius: 10px;
     padding: 50px;
-    margin: 15px;
+    margin-bottom: 80px;
     border: solid #e1dda1;
     box-shadow: 5px 10px 8px #888888;
 }

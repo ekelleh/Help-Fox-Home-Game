@@ -107,10 +107,16 @@ function gameOverEffects() {
 function winningSound() {
     if (currentStory.isGameWon === true) {
         gettingHomeSound.play();
+
+        let gameWonText = document.querySelector(".story-header");
+        gameWonText.innerHTML = "You Got Home – Have Won!";
+        gameWonText.style.color = "#e1dda1";
+        gameWonText.style.fontSize = "7rem";
+        storyHeader.appendChild(gameWonText);
     }
 }
 
-// make Game Won victory page
-// make Game over page
-// add aniimation page "loading"
+// add animation page "loading"
+// make Game Won victory page - add animation?
 // add score counter?
+//breadcrumbs?

@@ -8,9 +8,9 @@ import choiceData from "./choice-data.js";
 const beginning = new Story(storyData["0A"].content, "0A");
 const choices = [];
 let currentStory = beginning;
-const clickSound = new Audio("/sounds/194071__potentjello__buttons-and-knobs-10.wav");
-const gameOverSound = new Audio("/sounds/337910__fschaeffer__82churchbells_Game over.wav");
-const gettingHomeSound = new Audio("/sounds/aaj_0276_Harmonica_Riff_10.mp3");
+const clickSound = new Audio("sounds/194071__potentjello__buttons-and-knobs-10.wav");
+const gameOverSound = new Audio("sounds/337910__fschaeffer__82churchbells_Game over.wav");
+const gettingHomeSound = new Audio("sounds/aaj_0276_Harmonica_Riff_10.mp3");
 let lifeCounter = 3;
 
 //initializing all choices in choice-data.js and adding them to choices array

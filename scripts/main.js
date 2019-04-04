@@ -53,6 +53,8 @@ function renderChoices() {
     });
 }
 
+function renderLifeCounter() {}
+
 function renderEverything() {
     renderStory();
     renderChoices();
@@ -115,9 +117,10 @@ function gameOverEffects() {
 
         let goBackToStartButton = document.querySelector(".back-to-start");
         goBackToStartButton.innerHTML = "Go Back to Start";
-        goBackToStartButton.classList.add("life-count");
+        goBackToStartButton.classList.add("choice");
+        goBackToStartButton.setAttribute("data-target-story-id", "0A");
 
-        backToStart.appendChild(goBackToStartButton);
+        //backToStart.appendChild(goBackToStartButton);
 
         currentStory = beginning; //go back to start?
     } else if (lifeCounter <= 0) {

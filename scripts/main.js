@@ -115,14 +115,15 @@ function gameOverEffects() {
         loseOneLife.style.fontSize = "7rem";
         //storyHeader.appendChild(loseOneLife);
 
+        const choiceBox = document.querySelector(".choice-box");
+
         let goBackToStartButton = document.querySelector(".back-to-start");
         goBackToStartButton.innerHTML = "Go Back to Start";
         goBackToStartButton.classList.add("choice");
         goBackToStartButton.setAttribute("data-target-story-id", "0A");
+        choiceBox.appendChild(goBackToStartButton);
 
-        //backToStart.appendChild(goBackToStartButton);
-
-        currentStory = beginning; //go back to start?
+        selectChoice();
     } else if (lifeCounter <= 0) {
         gameOverSound.play();
 

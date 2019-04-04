@@ -111,15 +111,12 @@ function gameOverEffects() {
         loseOneLife.innerHTML = "Not a wise choice...";
         loseOneLife.style.color = "red";
         loseOneLife.style.fontSize = "7rem";
-        storyHeader.appendChild(loseOneLife);
+        //storyHeader.appendChild(loseOneLife);
 
         let goBackToStartButton = document.querySelector(".back-to-start");
         goBackToStartButton.innerHTML = "Go Back to Start";
-        goBackToStartButton.style.background = "#e1dda1";
-        goBackToStartButton.style.color = "rgb(19, 16, 60);";
-        goBackToStartButton.style.width = "300px;";
-        goBackToStartButton.style.height = "40px";
-        goBackToStartButton.style.FontFamily = "Lobster Two, cursive";
+        goBackToStartButton.classList.add("life-count");
+
         backToStart.appendChild(goBackToStartButton);
 
         currentStory = beginning; //go back to start?

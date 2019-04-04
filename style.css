@@ -125,6 +125,7 @@ header h1 {
     color: rgb(19, 16, 60);
     margin: 5px;
     font-family: "Lobster Two", cursive;
+    box-shadow: 5px 10px 8px #888888;
 }
 
 .fa-heart {

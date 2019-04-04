@@ -154,6 +154,7 @@ function gameOverEffects() {
 
 function winningSound() {
     if (currentStory.isGameWon === true) {
+        gameMusic.pause();
         gettingHomeSound.play();
 
         let gameWonText = document.querySelector(".story-header");

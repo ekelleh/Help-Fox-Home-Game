@@ -91,10 +91,39 @@ function selectChoice() {
     document.querySelectorAll(".choice").forEach(addEventListenerForChoice);
 }
 
+// adding Life counter
+
+function reduceLifeCounter() {
+    if (currentStory.isGameOver === true) {
+        lifeCounter = lifeCounter - 1;
+        console.log(lifeCounter);
+    }
+}
+
 //adding sound effects
 
 function gameOverEffects() {
     if (currentStory.isGameOver === true) {
+        gameOverSound.play();
+        reduceLifeCounter();
+
+        let loseOneLife = document.querySelector(".story-header");
+        loseOneLife.innerHTML = "Not a wise choice...";
+        loseOneLife.style.color = "red";
+        loseOneLife.style.fontSize = "7rem";
+        storyHeader.appendChild(loseOneLife);
+
+        let goBackToStartButton = document.querySelector(".back-to-start");
+        goBackToStartButton.innerHTML = "Go Back to Start";
+        goBackToStartButton.style.background = "#e1dda1";
+        goBackToStartButton.style.color = "rgb(19, 16, 60);";
+        goBackToStartButton.style.width = "300px;";
+        goBackToStartButton.style.height = "40px";
+        goBackToStartButton.style.FontFamily = "Lobster Two, cursive";
+        backToStart.appendChild(goBackToStartButton);
+
+        currentStory = beginning; //go back to start?
+    } else if (lifeCounter <= 0) {
         gameOverSound.play();
 
         let gameOverText = document.querySelector(".story-header");

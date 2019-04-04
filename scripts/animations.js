@@ -27,8 +27,9 @@ function draw() {
     clear();
     if (typeof window.gameOver !== "undefined" && window.gameOver) {
         animation(gameOverAnimation, 35, 35);
+    } else if (typeof window.loading !== "undefined" && window.loading) {
+        animation(runningAnimation, 35, 35);
     } else {
         animation(sequenceAnimation, 35, 35);
-        animation(runningAnimation, 35, 175);
     }
 }

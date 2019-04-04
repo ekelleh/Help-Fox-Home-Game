@@ -11,6 +11,10 @@ let currentStory = beginning;
 const clickSound = new Audio("sounds/194071__potentjello__buttons-and-knobs-10.wav");
 const gameOverSound = new Audio("sounds/337910__fschaeffer__82churchbells_Game over.wav");
 const gettingHomeSound = new Audio("sounds/aaj_0276_Harmonica_Riff_10.mp3");
+const gameMusic = new Audio("sounds/109409__bruno-ph__sadness-cosmo.mp3");
+gameMusic.loop = true;
+gameMusic.autoplay = true;
+
 let lifeCounter = 3;
 
 //initializing all choices in choice-data.js and adding them to choices array
@@ -75,6 +79,7 @@ function renderEverything() {
     selectChoice();
     gameOverEffects();
     winningSound();
+    window.loading = false;
 }
 
 renderEverything();
@@ -93,7 +98,8 @@ function changeCurrentStory(storyId) {
 function choiceClickHandler(evt) {
     const targetStoryId = evt.target.getAttribute("data-target-story-id");
     changeCurrentStory(targetStoryId);
-    renderEverything();
+    window.loading = true;
+    setTimeout(renderEverything, 1000);
     clickSound.play();
     setHeading();
 }

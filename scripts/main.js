@@ -66,10 +66,6 @@ function renderLifeCounter() {
         lifeScoreBox.appendChild(skull);
 
         window.gameOver = true;
-
-        //const gameOverAnimation = document.createElement("script");
-        //gameOverAnimation.setAttribute("src", "scripts/gameover.js");
-        //document.querySelector("body").appendChild(gameOverAnimation);
     }
 }
 
@@ -132,21 +128,21 @@ function gameOverEffects() {
     if (currentStory.isGameOver === true) {
         gameOverSound.play();
         reduceLifeCounter();
+        if (lifeCounter <= 0) {
+            setTimeout(setHeading.bind(null, "GAME OVER!", ["game-over"]), 0);
+        } else {
+            const choiceBox = document.querySelector(".choice-box");
 
-        const choiceBox = document.querySelector(".choice-box");
+            let goBackToStartButton = document.createElement("div");
+            goBackToStartButton.innerHTML = "Go Back to Start";
+            goBackToStartButton.classList.add("choice");
+            goBackToStartButton.classList.add("back-to-start");
+            goBackToStartButton.setAttribute("data-target-story-id", "0A");
+            choiceBox.appendChild(goBackToStartButton);
 
-        let goBackToStartButton = document.createElement("div");
-        goBackToStartButton.innerHTML = "Go Back to Start";
-        goBackToStartButton.classList.add("choice");
-        goBackToStartButton.classList.add("back-to-start");
-        goBackToStartButton.setAttribute("data-target-story-id", "0A");
-        choiceBox.appendChild(goBackToStartButton);
-
-        selectChoice();
-        setTimeout(setHeading.bind(null, "Not a wise choice...", ["game-over"]), 0);
-    }
-    if (lifeCounter <= 0) {
-        setTimeout(setHeading.bind(null, "GAME OVER!", ["game-over"]), 0);
+            selectChoice();
+            setTimeout(setHeading.bind(null, "Not a wise choice...", ["game-over"]), 0);
+        }
     }
 }
 
@@ -155,7 +151,7 @@ function winningSound() {
         gettingHomeSound.play();
 
         let gameWonText = document.querySelector(".story-header");
-        gameWonText.innerHTML = "You Got Home – Have Won!";
+        gameWonText.innerHTML = "You Got Home – You Have Won!";
         gameWonText.style.color = "#e1dda1";
         gameWonText.style.fontSize = "7rem";
         storyHeader.appendChild(gameWonText);

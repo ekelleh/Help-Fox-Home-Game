@@ -19,14 +19,14 @@ function preload() {
 }
 
 function setup() {
-    var canvas = createCanvas(70, 210);
+    var canvas = createCanvas(70, 70);
     canvas.parent("sketch-holder");
 }
 
 function draw() {
     clear();
     if (typeof window.gameOver !== "undefined" && window.gameOver) {
-        animation(gameOverAnimation, 35, 105);
+        animation(gameOverAnimation, 35, 35);
     } else {
         animation(sequenceAnimation, 35, 35);
         animation(runningAnimation, 35, 175);

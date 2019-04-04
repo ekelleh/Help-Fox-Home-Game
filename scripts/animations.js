@@ -25,7 +25,10 @@ function setup() {
 
 function draw() {
     clear();
-    animation(sequenceAnimation, 35, 35);
-    animation(gameOverAnimation, 35, 105);
-    animation(runningAnimation, 35, 175);
+    if (typeof window.gameOver !== "undefined" && window.gameOver) {
+        animation(gameOverAnimation, 35, 105);
+    } else {
+        animation(sequenceAnimation, 35, 35);
+        animation(runningAnimation, 35, 175);
+    }
 }

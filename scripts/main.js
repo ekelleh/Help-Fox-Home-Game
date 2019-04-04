@@ -64,6 +64,12 @@ function renderLifeCounter() {
         const skull = document.createElement("i");
         skull.classList.add("fas", "fa-skull");
         lifeScoreBox.appendChild(skull);
+
+        window.gameOver = true;
+
+        //const gameOverAnimation = document.createElement("script");
+        //gameOverAnimation.setAttribute("src", "scripts/gameover.js");
+        //document.querySelector("body").appendChild(gameOverAnimation);
     }
 }
 

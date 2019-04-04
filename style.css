@@ -8,7 +8,7 @@ body {
     display: flex;
     align-items: center;
     align-content: space-around;
-    font-family: "Lobster Two", cursive;
+    font-family: "Merriweather", serif;
     flex-direction: column;
     font-size: 30px;
     background-image: url("./sprites/nightskytry_bak.png");
@@ -24,16 +24,19 @@ body .index {
 .hero {
     display: flex;
     align-items: center;
+    font-family: "Lobster Two", cursive;
 }
 
 .story-header {
     margin: 10px;
     color: #e1dda1;
+    font-family: "Lobster Two", cursive;
 }
 
 header h1 {
     font-size: 45px;
     line-height: 60px;
+    font-family: "Lobster Two", cursive;
     height: 56px;
     margin: 0;
     display: inline-block;
@@ -105,11 +108,27 @@ header h1 {
     margin-bottom: 80px;
     border: solid #e1dda1;
     box-shadow: 5px 10px 8px #888888;
+    font-family: "Lobster Two", cursive;
 }
 
 .start-game a {
     color: #e1dda1;
     text-decoration: none;
+}
+
+.life-count {
+    background-color: #e1dda1;
+    border-radius: 20px;
+    width: 300px;
+    min-width: 200px;
+    height: 40px;
+    color: rgb(19, 16, 60);
+    margin: 5px;
+    font-family: "Lobster Two", cursive;
+}
+
+.fa-heart {
+    font-size: 25px;
 }
 
 .story-box {

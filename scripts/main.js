@@ -11,6 +11,7 @@ let currentStory = beginning;
 const clickSound = new Audio("/sounds/194071__potentjello__buttons-and-knobs-10.wav");
 const gameOverSound = new Audio("/sounds/337910__fschaeffer__82churchbells_Game over.wav");
 const gettingHomeSound = new Audio("/sounds/aaj_0276_Harmonica_Riff_10.mp3");
+let lifeCounter = 3;
 
 //initializing all choices in choice-data.js and adding them to choices array
 
@@ -118,5 +119,7 @@ function winningSound() {
 
 // add animation page "loading"
 // make Game Won victory page - add animation?
-// add score counter?
+// add score counter? --> fewer number of choices, the better 'survival rate'
 //breadcrumbs?
+// timer for the whole game
+// life counter

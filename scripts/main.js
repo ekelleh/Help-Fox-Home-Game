@@ -53,7 +53,19 @@ function renderChoices() {
     });
 }
 
-function renderLifeCounter() {}
+function renderLifeCounter() {
+    const lifeScoreBox = document.querySelector(".life-count");
+    const hearts = Array.from(lifeScoreBox.querySelectorAll(".fa-heart"));
+
+    if (lifeCounter < hearts.length) {
+        lifeScoreBox.removeChild(hearts.pop());
+    }
+    if (lifeCounter === 0) {
+        const skull = document.createElement("i");
+        skull.classList.add("fas", "fa-skull");
+        lifeScoreBox.appendChild(skull);
+    }
+}
 
 function renderEverything() {
     renderStory();
@@ -81,8 +93,7 @@ function choiceClickHandler(evt) {
     changeCurrentStory(targetStoryId);
     renderEverything();
     clickSound.play();
-    let emptyHeading = document.querySelector(".story-header");
-    emptyHeading.innerHTML = "";
+    setHeading();
 }
 
 function addEventListenerForChoice(choice) {
@@ -99,39 +110,37 @@ function reduceLifeCounter() {
     if (currentStory.isGameOver === true) {
         lifeCounter = lifeCounter - 1;
         console.log(lifeCounter);
+        renderLifeCounter();
     }
 }
 
-//adding sound effects
+function setHeading(content = "", classNames = []) {
+    const storyHeader = document.querySelector(".story-header");
+    storyHeader.classList.add(...classNames);
+    storyHeader.innerHTML = content;
+}
+
+//adding game over effects
 
 function gameOverEffects() {
     if (currentStory.isGameOver === true) {
         gameOverSound.play();
         reduceLifeCounter();
 
-        let loseOneLife = document.querySelector(".story-header");
-        loseOneLife.innerHTML = "Not a wise choice...";
-        loseOneLife.style.color = "red";
-        loseOneLife.style.fontSize = "7rem";
-        //storyHeader.appendChild(loseOneLife);
-
         const choiceBox = document.querySelector(".choice-box");
 
-        let goBackToStartButton = document.querySelector(".back-to-start");
+        let goBackToStartButton = document.createElement("div");
         goBackToStartButton.innerHTML = "Go Back to Start";
         goBackToStartButton.classList.add("choice");
+        goBackToStartButton.classList.add("back-to-start");
         goBackToStartButton.setAttribute("data-target-story-id", "0A");
         choiceBox.appendChild(goBackToStartButton);
 
         selectChoice();
-    } else if (lifeCounter <= 0) {
-        gameOverSound.play();
-
-        let gameOverText = document.querySelector(".story-header");
-        gameOverText.innerHTML = "GAME OVER!";
-        gameOverText.style.color = "red";
-        gameOverText.style.fontSize = "7rem";
-        storyHeader.appendChild(gameOverText);
+        setTimeout(setHeading.bind(null, "Not a wise choice...", ["game-over"]), 0);
+    }
+    if (lifeCounter <= 0) {
+        setTimeout(setHeading.bind(null, "GAME OVER!", ["game-over"]), 0);
     }
 }
 

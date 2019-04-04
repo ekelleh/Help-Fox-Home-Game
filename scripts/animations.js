@@ -1,6 +1,10 @@
 let sequenceAnimation;
+let gameOverAnimation;
+let runningAnimation;
 
 function preload() {
+    const gameOverSpriteSheet = loadSpriteSheet("sprites/dead.png", 65, 65, 7);
+    const runningSpriteSheet = loadSpriteSheet("sprites/run.png", 78, 65, 7);
     sequenceAnimation = loadAnimation(
         "sprites/tile001.png",
         "sprites/tile002.png",
@@ -9,36 +13,19 @@ function preload() {
         "sprites/tile005.png",
         "sprites/tile006.png"
     );
+    gameOverAnimation = loadAnimation(gameOverSpriteSheet);
+    gameOverAnimation.frameDelay = 12;
+    runningAnimation = loadAnimation(runningSpriteSheet);
 }
 
 function setup() {
-    var canvas = createCanvas(70, 70);
+    var canvas = createCanvas(70, 210);
     canvas.parent("sketch-holder");
 }
 
 function draw() {
     clear();
     animation(sequenceAnimation, 35, 35);
+    animation(gameOverAnimation, 35, 105);
+    animation(runningAnimation, 35, 175);
 }
-
-/**
-
-var sprite_sheet_image;
-var sprite_sheet;
-var standing_animation;
-
-function preload() {
-    sprite_sheet = loadSpriteSheet("../sprites/standing.png", 65, 65, 7);
-    standing_animation = loadAnimation(sprite_sheet);
-    standing_animation.frameDelay = 30;
-}
-
-function setup() {
-    createCanvas(240, 240);
-}
-
-function draw() {
-    clear();
-    animation(standing_animation, 120, 120);
-}
- */

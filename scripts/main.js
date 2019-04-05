@@ -164,10 +164,3 @@ function winningSound() {
         storyHeader.appendChild(gameWonText);
     }
 }
-
-// add animation page "loading"
-// make Game Won victory page - add animation?
-// add score counter? --> fewer number of choices, the better 'survival rate'
-//breadcrumbs?
-// timer for the whole game
-// life counter

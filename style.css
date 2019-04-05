@@ -73,11 +73,11 @@ header h1 {
 }
 
 .ribbon:before {
-    border-color: #481026 #481026 #481026 transparent; /*bg color for left side of ribbon #513b53*/
+    border-color: #481026 #481026 #481026 transparent; /* color for left side of ribbon #513b53*/
 }
 
 .ribbon:after {
-    border-color: #481026 transparent #481026 #481026; /* bg color for right side of ribbon */
+    border-color: #481026 transparent #481026 #481026; /* color for right side of ribbon */
     right: -45px;
     left: auto;
 }
@@ -102,7 +102,7 @@ header h1 {
 }
 
 hr {
-    color: #e1dda1;
+    border: solid 1px #e1dda1;
 }
 
 .rules h2 {
@@ -205,8 +205,9 @@ hr {
     height: 275px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    margin-top: 240px;
+    margin-top: 200px;
     margin-left: 190px;
+    margin-bottom: 0px;
 }
 .fox .head {
     width: 184px;
